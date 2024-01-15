@@ -4,7 +4,7 @@ function addCustomer() {
     const form = document.getElementById('addCustomerForm');
     const formData = new FormData(form);
   
-    fetch('http://localhost:8081/api/customers', {
+    fetch('https://assignment-production-92db.up.railway.app/api/customers', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

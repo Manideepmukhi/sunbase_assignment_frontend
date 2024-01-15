@@ -102,7 +102,7 @@ function syncCustomers() {
 // Call updateCustomerTable when the page loads
 document.addEventListener('DOMContentLoaded', function () {
   // Fetch and display initial customer data
-  fetch('http://localhost:8081/api/customers', {
+  fetch('https://assignment-production-92db.up.railway.app/api/customers', {
     method: 'GET',
   })
   .then(response => {

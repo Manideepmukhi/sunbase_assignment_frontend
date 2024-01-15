@@ -10,7 +10,7 @@ $(document).ready(function () {
       // Make an API request to authenticate user and get token
       $.ajax({
         type: 'POST',
-        url: 'http://localhost:8081/api/auth/login',
+        url: 'https://assignment-production-92db.up.railway.app/api/auth/login',
         contentType: 'application/json',
         data: JSON.stringify({ login_id, password }),
         success: function (data) {
