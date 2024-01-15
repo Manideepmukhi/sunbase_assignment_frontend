@@ -4,6 +4,7 @@
       {
         "src": "login.html",
         "use": "@vercel/static-build"
+        
       }
     ]
   }
