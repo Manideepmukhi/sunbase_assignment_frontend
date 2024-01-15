@@ -1,0 +1,44 @@
+<!-- customer-list.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="customer-list.css">
+  <title>Customer List</title>
+</head>
+<body>
+
+<div class="customer-list-container">
+  <h2>Customer List</h2>
+  <button class="add-customer-btn" onclick="syncCustomers()">Sync Customers</button>
+
+  <button class="add-customer-btn" onclick="openAddCustomerPage()">Add Customer</button>
+  
+  <table id="customer-table">
+    <thead>
+      <tr>
+        <th>Customer ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Address</th>
+        <th>City</th>
+        <th>State</th>
+        <th>Option</th>
+        <!-- Add more columns as needed -->
+      </tr>
+    </thead>
+    <tbody id="customer-table-body">
+      <!-- Customer data will be inserted here -->
+    </tbody>
+  </table>
+
+ 
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script src="customer-list.js"></script>
+</body>
+</html>
