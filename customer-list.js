@@ -29,7 +29,7 @@ function openAddCustomerPage() {
 
 function deleteCustomer(customerId) {
   // Send a DELETE request to your API endpoint
-  fetch(`http://localhost:8081/api/customers/${customerId}`, {
+  fetch(`https://sunbase-assignment-frontend.vercel.app/api/customers/${customerId}`, {
     method: 'DELETE',
     headers: {
       'Content-Type': 'application/json',
@@ -58,7 +58,7 @@ function syncCustomers() {
   const token = localStorage.getItem('token');
 
   // Sync data to the server
-  fetch('http://localhost:8081/api/customers/sync', {
+  fetch('https://sunbase-assignment-frontend.vercel.app/api/customers/sync', {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
@@ -75,7 +75,7 @@ function syncCustomers() {
     console.log('Sync successful:', syncData);
 
     // Fetch customer data from the server after syncing
-    fetch('http://localhost:8081/api/customers', {
+    fetch('https://sunbase-assignment-frontend.vercel.app/api/customers', {
       method: 'GET',
     })
     .then(response => {
