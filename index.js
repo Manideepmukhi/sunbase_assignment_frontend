@@ -1,4 +1,4 @@
-// login.js
+// index.js
 
 $(document).ready(function () {
     $('#loginForm').submit(function (e) {
