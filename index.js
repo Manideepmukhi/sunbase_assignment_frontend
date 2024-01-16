@@ -27,7 +27,7 @@ $(document).ready(function () {
        
       });
       function showAlert(title, message) {
-        // Create a pop-up alert with the provided title and message
+        // Creating a pop-up alert with the provided title and message
         alert(`${title}\n\n${message}`);
       }
     });

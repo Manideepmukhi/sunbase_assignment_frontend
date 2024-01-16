@@ -3,7 +3,7 @@
 // Function to update the customer table
 function updateCustomerTable(customers) {
   const tableBody = document.querySelector('#customer-table tbody');
-  tableBody.innerHTML = ''; // Clear existing rows
+  tableBody.innerHTML = ''; // Clearing existing rows
 
   customers.forEach(customer => {
     const row = document.createElement('tr');
@@ -28,7 +28,7 @@ function openAddCustomerPage() {
 }
 
 function deleteCustomer(customerId) {
-  // Send a DELETE request to your API endpoint
+  // Sending a DELETE request to your API endpoint
   fetch(`https://assignment-production-92db.up.railway.app/api/customers/${customerId}`, {
     method: 'DELETE',
     headers: {
@@ -42,12 +42,12 @@ function deleteCustomer(customerId) {
   })
   .then(deleteData => {
     console.log('Delete successful:', deleteData);
-    // Refresh the customer table after deletion
+    // Reloading the customer table after deletion
     location.reload();
   })
   .catch(deleteError => {
     console.error('Delete failed:', deleteError.message);
-    // Handle delete error
+    // Handling delete error
   });
 }
 
@@ -62,7 +62,7 @@ function syncCustomers() {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
-      'Authorization': token ? `Bearer ${token}` : '',  // Include token if available
+      'Authorization': token ? `Bearer ${token}` : '',  // Including token if available
     },
   })
   .then(response => {
@@ -74,7 +74,7 @@ function syncCustomers() {
   .then(syncData => {
     console.log('Sync successful:', syncData);
 
-    // Fetch customer data from the server after syncing
+    // Fetch customer data from the DB after syncing
     fetch('https://assignment-production-92db.up.railway.app/api/customers', {
       method: 'GET',
     })
@@ -121,6 +121,6 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 
-// Example: Call syncCustomers when a button is clicked
+// Calling syncCustomers when a button is clicked
 const syncButton = document.getElementById('syncButton');
 syncButton.addEventListener('click', syncCustomers);
