@@ -59,11 +59,12 @@ function syncCustomers() {
 
   // Sync data to the server
   fetch('https://assignment-production-92db.up.railway.app/api/customers/sync', {
-    method: 'GET',
+    method: 'POST',
     headers: {
       'Content-Type': 'application/json',
-      'Authorization': token ? `Bearer ${token}` : '',  // Including token if available
+       // Including token if available
     },
+    body: (token)
   })
   .then(response => {
     if (!response.ok) {
@@ -73,6 +74,9 @@ function syncCustomers() {
   })
   .then(syncData => {
     console.log('Sync successful:', syncData);
+
+
+
 
     // Fetch customer data from the DB after syncing
     fetch('https://assignment-production-92db.up.railway.app/api/customers', {
@@ -93,10 +97,13 @@ function syncCustomers() {
       // Handle fetch error
     });
   })
+  
   .catch(syncError => {
-    console.error('Sync failed:', syncError.message);
+    console.error('Sync failed:', ( token ));
     // Handle sync error
   });
+   // Redirect to the customer list page
+ window.location.href = 'customer-list.html';
 }
 
 // Call updateCustomerTable when the page loads
